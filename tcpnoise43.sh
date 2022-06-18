@@ -112,31 +112,31 @@ if [[ $@ == *"timed out:"* ]]; then
                 hexpack=$(printf "%08X%02X%02X%02X%02X%04X%01X\n" $(date +%s) ${host//./ } $port $resultcode)
                 crcgen "$hexpack"
                 printf "%-10s %-15s %-5s %-2s %-20s %22s\n" $(date +%s) $host $port $resultcode "(timed out)" $hexpack$chksum
-#                dostuff
+                dostuff
         elif [[ $@ == *"Connection refused"* ]]; then
                 resultcode=2
                 hexpack=$(printf "%08X%02X%02X%02X%02X%04X%01X\n" $(date +%s) ${host//./ } $port $resultcode)
                 crcgen "$hexpack"
                 printf "%-10s %-15s %-5s %-2s %-20s %22s\n" $(date +%s) $host $port $resultcode "(Connection Refused)" $hexpack$chksum
-#                dostuff
+                dostuff
         elif [[ $@ == *"Network is unreachable"* ]]; then
                 resultcode=4
                 hexpack=$(printf "%08X%02X%02X%02X%02X%04X%01X\n" $(date +%s) ${host//./ } $port $resultcode)
                 crcgen "$hexpack"
                 printf "%-10s %-15s %-5s %-2s %-20s %22s\n" $(date +%s) $host $port $resultcode "(Network Unreachable)" $hexpack$chksum
-#                dostuff
+                dostuff
         elif [[ $1 == *"No route to host"* ]]; then
                 resultcode=8
                 hexpack=$(printf "%08X%02X%02X%02X%02X%04X%01X\n" $(date +%s) ${host//./ } $port $resultcode)
                 crcgen "$hexpack"
                 printf "%-10s %-15s %-5s %-2s %-20s %22s\n" $(date +%s) $host $port $resultcode "(No Route to Host)" $hexpack$chksum
-#                dostuff
+                dostuff
         elif [[ $@ == *"succeeded!" ]]; then
                 resultcode=15
                 hexpack=$(printf "%08X%02X%02X%02X%02X%04X%01X\n" $(date +%s) ${host//./ } $port $resultcode)
                 crcgen "$hexpack"
                 printf "%-10s %-15s %-5s %-2s %-20s %22s\n" $(date +%s) $host $port $resultcode "(Successful)" $hexpack$chksum
-#                dostuff
+                dostuff
 		dosuccess
 
         fi
