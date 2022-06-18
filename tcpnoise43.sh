@@ -95,7 +95,7 @@ echo $result >> tcpnoise/$host.log
 function dosuccess
 {
 echo "$host responded on $port"
-echo "I just shat myself"
+echo "I found it at IKEA"
 echo "Successful $host $port"
 echo -ne '\007'
 }
